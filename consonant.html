@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Learning - Consonants</title>
+
+    <link rel="preload" href="Match/cursormatch.png" as="image">
+    <link rel="preload" href="Match/cursormatch2.png" as="image">
+
+    <link rel="stylesheet" href="https://use.typekit.net/fog0fvz.css">
+    <link rel="stylesheet" href="consonant.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html#box-11" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+    </nav>
+
+    <!-- Main Title Section -->
+    <section class="main-title-section">
+        <div class="main-title-wrapper">
+            <h1 class="main-title">Consonants</h1>
+        </div>
+    </section>
+
+    <!-- Introduction Text -->
+    <section class="intro-section">
+        <p class="intro-text">
+            Consonants are the backbone of Hindi script, each one a complete syllable carrying an inherent "a" sound.
+            They do not wait to be activated, they arrive ready, shaped by centuries of use.
+            Rather than memorising abstract symbols, every consonant is paired with a real English word you already
+            know. A <strong>transliteration</strong> bridge between two alphabets, two worlds.
+        </p>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Consonants Section -->
+    <section class="letter-section">
+        <div class="consonant-container" id="consonant-container"></div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-image" id="modalImage">
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title" id="modalTitle">Script Letter</h2>
+
+                <div class="strategy-badge" id="strategyBadge" data-strategy="DIRECT MATCH">DIRECT MATCH</div>
+
+                <div class="audio-section">
+                    <button class="audio-button" id="audioButton">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                        </svg>
+                    </button>
+                    <span class="audio-text">Click to hear pronunciation</span>
+                </div>
+
+                <div class="translation-section">
+                    <div class="translation-label">Hindi to English Phonetic Translation</div>
+                    <div class="translation-flow">
+                        <div class="translation-text" id="hindiScript">क</div>
+                        <div class="translation-arrow">→</div>
+                        <div class="phonetic-text" id="phoneticText">"ka"</div>
+                        <div class="translation-arrow">→</div>
+                        <div class="example-word" id="exampleWord">kabob</div>
+                    </div>
+                </div>
+
+                <div class="sentence-section">
+                    <div class="sentence-label">Example Sentence</div>
+                    <div class="sentence-text" id="exampleSentence">कमल एक सुंदर फूल है। (Lotus is a beautiful flower.)</div>
+                </div>
+
+                <div class="teaching-note-section">
+                    <div class="teaching-label">What You Should Know</div>
+                    <div class="teaching-note-text" id="teachingNote">
+                        This is where the honest explanation about the sound appears.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="consonant.js"></script>
+</body>
+</html>

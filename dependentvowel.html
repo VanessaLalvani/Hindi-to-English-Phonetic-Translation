@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Learning - Dependent Vowels</title>
+
+    <link rel="preload" href="Match/cursormatch.png" as="image">
+    <link rel="preload" href="Match/cursormatch2.png" as="image">
+
+    <link rel="stylesheet" href="https://use.typekit.net/fog0fvz.css">
+    <link rel="stylesheet" href="dependentvowel.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html#box-11" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+    </nav>
+
+    <section class="main-title-section">
+        <div class="main-title-wrapper">
+            <h1 class="main-title">Dependent<br>Vowels</h1>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <p class="intro-text">
+            Dependent vowels never stand alone, they attach to consonants, changing their sound.
+            They are the marks that modify, the diacritics that shift meaning with a single stroke.
+            Rather than learning Hindi script in isolation, every consonant is anchored to a real English word you already
+            know. A <strong>transliteration</strong> bridge between two alphabets, two worlds.
+        </p>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="letter-section">
+        <div class="consonant-container" id="dependent-vowel-container"></div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-image" id="modalImage"></div>
+            <div class="modal-body">
+                <h2 class="modal-title" id="modalTitle">Script Letter</h2>
+                <div class="strategy-badge" id="strategyBadge" data-strategy="DIRECT MATCH">DIRECT MATCH</div>
+                <div class="translation-section">
+                    <div class="translation-label">Hindi to English Phonetic Translation</div>
+                    <div class="translation-flow">
+                        <div class="translation-text" id="hindiScript">ा</div>
+                        <div class="translation-arrow">→</div>
+                        <div class="phonetic-text" id="phoneticText">"aa"</div>
+                        <div class="translation-arrow">→</div>
+                        <div class="example-word" id="exampleWord">example</div>
+                    </div>
+                </div>
+                <div class="sentence-section">
+                    <div class="sentence-label">Example Sentence</div>
+                    <div class="sentence-text" id="exampleSentence">Example sentence here.</div>
+                </div>
+                <div class="teaching-note-section">
+                    <div class="teaching-label">What You Should Know</div>
+                    <div class="teaching-note-text" id="teachingNote">
+                        This is where the honest explanation about the sound appears.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dependentvowel.js"></script>
+</body>
+</html>
