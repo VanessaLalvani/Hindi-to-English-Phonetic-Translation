@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Between Sound and Meaning</title>
+    
+    <!-- Adobe Fonts line REMOVED - using local PPMuseum font instead -->
+    <link rel="preload" href="Match/matchboxcover3.PNG" as="image">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+   <!-- INSTANT HIDE: Check hash before page renders -->
+<script>
+    if (window.location.hash === '#box-11') {
+        document.documentElement.classList.add('skip-to-box-11');
+    }
+</script>
+<style>
+    /* Hide match elements instantly if coming from consonant page */
+    .skip-to-box-11 #matchContainer,
+    .skip-to-box-11 .instruction {
+        display: none !important;
+    }
+    .skip-to-box-11 #blackOverlay {
+        display: none !important;
+    }
+    .skip-to-box-11 #matchboxCover {
+        display: block !important;
+        opacity: 1 !important;
+    }
+    .skip-to-box-11 #textBoxesContainer {
+        display: block !important;
+        opacity: 1 !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Skip to end button - same style as #skipBtn */
+    #skipToEndBtn {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 10001;
+        font-family: "PPMuseum", sans-serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 15px;
+        color: #e3e2c6;
+        background: transparent;
+        border: 1px solid rgba(227, 226, 198, 0.35);
+        border-radius: 6px;
+        padding: 9px 18px;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.3s ease, border-color 0.3s ease;
+        display: none; /* hidden until text boxes appear */
+    }
+
+    #skipToEndBtn:hover {
+        opacity: 1;
+        border-color: rgba(227, 226, 198, 0.75);
+    }
+
+    /* Show when text boxes are active */
+    body.spotlight-active #skipToEndBtn {
+        display: block;
+    }
+
+    /* Hide once on the last box */
+    body.spotlight-active.on-last-box #skipToEndBtn {
+        display: none;
+    }
+
+    /* Responsive sizing to match #skipBtn breakpoints */
+    @media (max-width: 1024px) and (min-width: 769px) {
+        #skipToEndBtn { bottom: 22px; right: 22px; font-size: 14px; padding: 8px 16px; }
+    }
+    @media (max-width: 768px) and (min-width: 481px) {
+        #skipToEndBtn { bottom: 18px; right: 18px; font-size: 13px; padding: 7px 14px; }
+    }
+    @media (max-width: 480px) {
+        #skipToEndBtn { bottom: 16px; right: 16px; font-size: 12px; padding: 7px 13px; }
+    }
+    @media (max-width: 374px) {
+        #skipToEndBtn { bottom: 14px; right: 14px; font-size: 11px; padding: 6px 12px; }
+    }
+    @media (max-height: 500px) and (orientation: landscape) {
+        #skipToEndBtn { bottom: 12px; right: 12px; font-size: 11px; padding: 6px 12px; }
+    }
+</style>
+</head>
+<body>
+    <div id="blackOverlay"></div>
+
+    <!-- Skip intro button (visible before text boxes) -->
+    <button id="skipBtn">skip intro</button>
+
+    <!-- Skip to end button (visible once text boxes appear) -->
+    <button id="skipToEndBtn">skip to end</button>
+    
+    <!-- Vertically stacked text boxes -->
+    <div id="textBoxesContainer" style="display: none;">
+        <div class="text-box box-color-1" data-index="0">
+            <p>Some sounds are as familiar as a <v>match striking.</v> You recognize them before you understand what they ignite.</p>
+            <ul>(Drag cursor upwards to continue)</ul>
+        </div>
+        <div class="text-box box-color-2" data-index="1">
+            <p>I am <v>Indian,</v> but I do not speak <v>Hindi.</v></p>
+            <ul>I grew up inside the language by listening to my mother pray. I recognized rhythm and melody while meaning remained out of reach.</ul>
+        </div>
+        <div class="text-box box-color-3" data-index="2">
+           <p>I learned to listen for sound and shape, for the texture of words I could recognize but not fully understand.</p>
+           <ul>This is the space between inheritance and access. Between knowing and almost-knowing.</ul>
+        </div>
+        <div class="text-box box-color-4" data-index="3">
+            <p>Like striking a match in the dark,</p> 
+            <p><v>phonetics</v></p>
+            <p>became my way in.</p>
+            <ul>Hindi scripts <o>(Devanagari)</o> breaks into three foundational parts:</ul>
+        </div>
+        <div class="text-box box-color-5" data-index="4">
+            <p>Independent Vowels:</p>
+                <ul>sounds that stand alone</ul>
+            <p>Dependent Vowels:</p>
+                <ul>sounds that attach to consonants</ul>
+            <p>Consonants:</p>
+                <ul>the structural foundation of every word</ul>
+        </div>
+        <div class="text-box box-color-6" data-index="5">
+            <p>This project recreates that process of learning through <v>sound, not syntax.</v> It mirrors the slow, uncertain work of reconstructing a language you were always around but never formally taught.</p>
+        </div>
+        <div class="text-box box-color-7" data-index="6">
+            <p>This website teaches you Devanagari letter paired with an English word that echoes its sound. It's a bridge between two scripts.</p>
+            <ul>Using audio cues, examples and labels, the website introduces a new style of phonetic learning</ul>
+        </div>
+        <div class="text-box box-color-8" data-index="7">
+            <p>Each matchbox holds a letter. Each flame reveals a sound. Each strike is an <v>act of reconnection.</p>
+        </div>
+        <div class="text-box box-color-10" data-index="8">
+            <div class="button-container">
+                <button class="nav-button" id="consonantsBtn">Consonants</button>
+                <button class="nav-button" id="dependentVowelsBtn">Dependent Vowels</button>
+                <button class="nav-button" id="independentVowelsBtn">Independent Vowels</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Click area overlay for sliding boxes -->
+    <div id="clickOverlay" style="display: none;"></div>
+    
+    <!-- Matchbox cover that appears with blue background -->
+    <img id="matchboxCover" src="Match/matchboxcover3.PNG" alt="matchbox cover" class="match-img clickable-cover" style="display: none; position: fixed; z-index: 2;">
+    
+    <div id="matchContainer" class="active">
+        <p class="instruction">click to open</p>
+        <img src="Match/match1.PNG" alt="matchbox" id="matchImage" class="match-img">
+        <video id="matchVideo" class="match-img" muted playsinline preload="auto" style="display: none;"></video>
+        <img id="matchGif" class="match-img" style="display: none;">
+    </div>
+
+    <!-- Audio elements for sound effects -->
+    <audio id="openboxAudio" src="Match/openbox.mp3" preload="auto"></audio>
+    <audio id="takematchoutAudio" src="Match/takematchout.mp3" preload="auto"></audio>
+    <audio id="matchstickAudio" src="Match/matchstick.mp3" preload="auto"></audio>
+    <audio id="closeboxAudio" src="Match/closebox.mp3" preload="auto"></audio>
+    <audio id="strikematchAudio" src="Match/strikematch.mp3" preload="auto"></audio>
+    <audio id="matchspinAudio" src="Match/matchspin.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
